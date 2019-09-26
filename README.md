@@ -1,4 +1,4 @@
-# Thread-safe Key-Value storage with expiration date
+# Multi-Threaded Key-Value storage with expiration date
   Basic thread-safe key-value temporary storage on TCP sockets using LevelDB. Values and keys are divided using prefixes for more effective value storing and accessing in pairs [key -> value] and [experation date in Unix -> key]. Expiration date checking is implemented with iterating over keys with "experation date prefix". Because values are stored in lexographical order, there is no need to iterate over all experation dates. 
  Also there was an idea to store everything in one key-value pair while encoding expiration date in first 10 bytes, but in this case everything should be accessed using iterator which doesn't look as effective. In expiration date key also is md5 encoded key from value in case if some of the values will be put into database at the same time unit, to preserve key uniqueness and to avoid record leaks.
 ## Prerequisites
