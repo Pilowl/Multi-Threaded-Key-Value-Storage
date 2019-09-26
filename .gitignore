@@ -1,0 +1,5 @@
+.vscode/launch.json
+db/
+server.go~
+__debug_bin
+.server.go.un~
