@@ -30,4 +30,4 @@ Also can be tested using netcat:
 - `echo -n "PUT somekey 100 somevalue" | nc localhost 2222`
 - `echo -n "DELETE somekey" | nc localhost 2222`
 
-There are also some dumb load and expiration date tests can be found in the test folder.
+Some dumb load and expiration date tests can also be found in the test folder.
