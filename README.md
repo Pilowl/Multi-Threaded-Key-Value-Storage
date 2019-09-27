@@ -18,7 +18,7 @@ Use master file to start server or ```go run main.go utils.go server.go``` comma
 - `-workers` for specifying request threads
 
 Also max request (by default - 256 byte) size can be changed using tcp request: 
-```PUT DB_REQ_SIZE *some integer*```
+```DB_REQ_SIZE *some integer*```
 
 ## Commands
 - `READ *KEY*` - for getting value from the storage
