@@ -188,7 +188,7 @@ func main() {
 		maxSize:         maxSize,
 		requests:        RequestList{},
 		storageCommands: storageCommands,
-		// Slice for locked values
+		// Map for locked values
 		lockVal:     make(map[string]struct{}),
 		workerCount: workerCount,
 	}
