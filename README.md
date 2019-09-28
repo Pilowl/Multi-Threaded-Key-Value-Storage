@@ -12,7 +12,7 @@ In project folder: `go get -u ./`
 
 ## Server
 
-Use master file to start server or ```go run main.go utils.go server.go``` command where at the end flags can be added. Available flags can be found using `--help` command. Among them:
+Use ```master``` file to start server or ```go run main.go utils.go server.go``` command where at the end flags can be added. Available flags can be found using `--help` command. Among them:
 - `-port` for port changing
 - `-dbpath` for specifying database path
 - `-workers` for specifying request threads
@@ -25,7 +25,7 @@ Also max request (by default - 256 byte) size can be changed using tcp request:
 - `PUT *KEY* *STORING TIME IN SECONDS* *VALUE*` - for inserting value  
 - `DELETE *KEY*` - for deleting value
 
-Also can be tested using netcat:
+Can also be tested using netcat:
 - `echo -n "READ somekey" | nc localhost 2222`
 - `echo -n "PUT somekey 100 somevalue" | nc localhost 2222`
 - `echo -n "DELETE somekey" | nc localhost 2222`
