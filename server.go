@@ -49,7 +49,7 @@ func workerGarbageCollector(app *Application) {
 		// Iteration over all expiration time values
 		iter := app.db.NewIterator(util.BytesPrefix([]byte(DB_EXPIRATION_PREFIX)), nil)
 		for iter.Next() {
-			// Starting from 17 to skip prefix + 16 bytes of checksum
+			// Taking 10 bytes skipping prefix to get unix timestamp
 			key := iter.Key()[1:11]
 			timeUnix, _ := strconv.Atoi(string(key))
 			expirationTime := time.Unix(int64(timeUnix), 0)
