@@ -99,10 +99,10 @@ func workerProcess(app *Application) {
 				batch.Delete(findExpiration(app, request.command.argKey))
 			}
 			batch.Put(PrefixKey(DB_DATA_PREFIX, request.command.argKey), request.command.argValue)
-			experationBytes := []byte(expirationTime)
+			expirationBytes := []byte(expirationTime)
 			// Creating checksum out of key for unique expiration record
 			expChecksum := md5.Sum(request.command.argKey)
-			batch.Put(PrefixKey(DB_EXPIRATION_PREFIX, append(experationBytes, expChecksum[:]...)), request.command.argKey)
+			batch.Put(PrefixKey(DB_EXPIRATION_PREFIX, append(expirationBytes, expChecksum[:]...)), request.command.argKey)
 			err := app.db.Write(batch, nil)
 			UnlockValue(app, string(request.command.argKey))
 			if err != nil {
